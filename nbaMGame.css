@@ -1,0 +1,183 @@
+body {
+  background-color :#EEEEEE;
+}
+
+.btn:hover{
+ cursor: pointer;
+}
+
+#start{
+
+  height: 80vh;
+  font-family: "Press Start 2P";
+  color: #1D4289;
+  position: relative;
+  margin-top:50px;
+}
+
+#title{
+
+  font-size: 5rem;
+
+  perspective: 500px;
+}
+
+#title > p{
+
+  transform: rotateX( 15deg );
+  line-height: 0.75;
+  text-align: center;
+  color: #1D4289;
+}
+
+#title > p > img{
+
+  height: 100px;
+  width:50px;
+}
+
+.front > img{
+
+  height:50px;
+  width: 25px;
+}
+
+#start.playing {
+  margin-top: -75vh;
+  transition: margin-top 1s;
+}
+
+#start.playing + #game {
+  display: flex;
+}
+
+
+#game {
+  display: none;
+}
+
+#game .row{
+  align-content: center;
+
+  width: 100vw;
+}
+
+.container {
+  flex-wrap: wrap;
+}
+
+.game-card-wrapper {
+
+  /* width: 200px;
+  Height:300px; */
+  perspective: 600px;
+  width: 75%;
+  padding-bottom: 75%;
+  position: relative;
+  margin: 1rem auto;
+}
+
+.game-card-wrapper:hover {
+  cursor: pointer;
+}
+
+.game-card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+.game-card .back > img{
+
+  width:108px;
+  height:108px
+}
+
+.game-card.cardFlipped {
+  transform: rotateY( 180deg );
+}
+
+.front,
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: 2px solid black;
+  overflow: hidden;
+}
+
+.front {
+  background-color: #cccccc;
+  font-size: 3rem;
+}
+
+.back {
+  transform: rotateY( 180deg );
+}
+
+.back > img {
+  height: 100%;
+  width: auto;
+}
+
+#current-score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  font-family: "Press Start 2P";
+  color: #1D4289;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#end {
+  display: none;
+}
+
+#end.game-over {
+  display: flex;
+  position: absolute;
+  background-color: rgba(0,0,0,0.75);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  justify-content: space-around;
+  font-family: "Press Start 2P";
+  text-align: center;
+}
+
+#end h1 {
+  font-size: 4rem;
+}
+
+#end h4 {
+  font-size: 3rem;
+}
+
+@media (max-width: 992px) {
+  .game-card-wrapper {
+    width: 100%;
+    padding-bottom: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .game-card-wrapper {
+    width: 120%;
+    padding-bottom: 120%;
+  }
+}
